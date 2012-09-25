@@ -3,3 +3,51 @@
 This example shows how to do border layouts using Less mixins.
 
 You can see the example [here](http://sunesimonsen.github.com/less-border-layout/).
+
+index.html:
+
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <link rel="stylesheet/less" type="text/css" href="style.less">
+        <script src="less.js" type="text/javascript"></script>
+      </head>
+      <body>
+        <div class="main-container">
+          <div class="layout top"></div> 
+          <div class="layout left"></div> 
+          <div class="layout center content">
+            <div class="layout top"></div> 
+            <div class="layout center"></div> 
+            <div class="layout right"></div> 
+          </div> 
+          <div class="layout right"></div> 
+          <div class="layout bottom"></div> 
+        </div>
+      </body>
+    </html>
+  
+Style.less:
+
+    @import 'border-layout.less';
+    
+    .main-container {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+    
+        min-width: 400px;
+        min-height: 400px;
+        
+        .border-layout-top(100px);
+        .border-layout-left(150px);
+        .border-layout-right(200px);
+        .border-layout-bottom(50px);
+    
+        .content {
+            .border-layout-top(40px);
+            .border-layout-right(60px);
+        }
+    }

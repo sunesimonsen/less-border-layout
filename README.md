@@ -2,6 +2,8 @@
 
 This example shows how to do border layouts using Less mixins.
 
+![Border layout](http://sunesimonsen.github.com/less-border-layout/images/border-layout.png)
+
 You can see the example [here](http://sunesimonsen.github.com/less-border-layout/).
 
 index.html:

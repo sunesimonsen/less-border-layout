@@ -40,7 +40,7 @@ Style.less:
         right: 0px;
         bottom: 0px;
     
-        min-width: 400px;
+        min-width: 600px;
         min-height: 400px;
         
         .border-layout-top(100px);

@@ -1,0 +1,82 @@
+.box-sizing(@boxmodel) {
+  -webkit-box-sizing: @boxmodel;
+     -moz-box-sizing: @boxmodel;
+          box-sizing: @boxmodel;
+}
+
+.border-layout-top(@height) {
+    > .layout.top {
+        height: @height;
+    }
+    > .layout.left,
+    > .layout.center,
+    > .layout.right {
+        top: @height;
+    }
+}
+
+.border-layout-left(@width) {
+    > .layout.left {
+        width: @width;
+    }
+    > .layout.center {
+        left: @width;
+    }
+}
+
+.border-layout-right(@width) {
+    > .layout.right {
+        width: @width;
+    }
+    > .layout.center {
+        right: @width;
+    }
+}
+
+.border-layout-bottom(@height) {
+    > .layout.bottom {
+        height: @height;
+    }
+    > .layout.left,
+    > .layout.center,
+    > .layout.right {
+        bottom: @height;
+    }
+}
+
+.layout {
+    position: absolute;
+    .box-sizing(border-box);
+}
+
+.layout.center {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.layout.top {
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.layout.left {
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.layout.right {
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.layout.bottom {
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+

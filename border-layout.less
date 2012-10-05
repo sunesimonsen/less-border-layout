@@ -1,12 +1,9 @@
-.box-sizing(@boxmodel) {
-  -webkit-box-sizing: @boxmodel;
-     -moz-box-sizing: @boxmodel;
-          box-sizing: @boxmodel;
-}
+@import "layouts.less";
 
 .border-layout-top(@height) {
     > .layout.top {
         height: @height;
+        bottom: auto;
     }
     > .layout.left,
     > .layout.center,
@@ -18,6 +15,7 @@
 .border-layout-left(@width) {
     > .layout.left {
         width: @width;
+        right: auto;
     }
     > .layout.center {
         left: @width;
@@ -27,6 +25,7 @@
 .border-layout-right(@width) {
     > .layout.right {
         width: @width;
+        left: auto;
     }
     > .layout.center {
         right: @width;
@@ -36,47 +35,12 @@
 .border-layout-bottom(@height) {
     > .layout.bottom {
         height: @height;
+        top: auto;
     }
     > .layout.left,
     > .layout.center,
     > .layout.right {
         bottom: @height;
     }
-}
-
-.layout {
-    position: absolute;
-    .box-sizing(border-box);
-}
-
-.layout.center {
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-}
-
-.layout.top {
-    top: 0;
-    left: 0;
-    right: 0;
-}
-
-.layout.left {
-    top: 0;
-    left: 0;
-    bottom: 0;
-}
-
-.layout.right {
-    top: 0;
-    right: 0;
-    bottom: 0;
-}
-
-.layout.bottom {
-    left: 0;
-    right: 0;
-    bottom: 0;
 }
 

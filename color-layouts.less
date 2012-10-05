@@ -1,0 +1,19 @@
+.color-layout-parts(@color, @step: 10) {
+    > .layout.top,
+    > .layout.pane1 {
+        background-color: lighten(@color, 0%); 
+    }
+    > .layout.left {
+        background-color: lighten(@color, 1% * @step); 
+    }
+    > .layout.right {
+        background-color: lighten(@color, 1% * @step);
+    }
+    > .layout.bottom {
+        background-color: lighten(@color, 0%);
+    }
+    > .layout.center,
+    > .layout.pane2 {
+        background-color: lighten(@color, 1% * @step * 2);
+    }
+}

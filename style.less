@@ -1,24 +1,10 @@
 @import 'border-layout.less';
+@import 'color-layouts.less';
 
-.color-layout-parts(@color) {
-    > .layout.top {
-        background-color: lighten(@color, 20%); 
-    }
-    > .layout.left {
-        background-color: lighten(@color, 30%); 
-    }
-    > .layout.right {
-        background-color: lighten(@color, 30%);
-    }
-    > .layout.bottom {
-        background-color: lighten(@color, 20%);
-    }
-    > .layout.center {
-        background-color: lighten(@color, 40%);
-    }
-}
+@include "border-layout.less";
+@include "color-layouts.less";
 
-.main-container {
+.layout.main {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -33,12 +19,17 @@
     .border-layout-right(200px);
     .border-layout-bottom(50px);
 
-    .color-layout-parts(blue);
-
     .content {
         .border-layout-top(40px);
         .border-layout-right(60px);
+    }
+}
 
-        .color-layout-parts(yellow);
+// Color
+
+.layout.main {
+    .color-layout-parts(blue, 20);
+    .content {
+        .color-layout-parts(yellow, 20);
     }
 }

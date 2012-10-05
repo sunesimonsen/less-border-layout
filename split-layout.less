@@ -1,0 +1,27 @@
+@import "layouts.less";
+
+.split-layout(@dividePosition, @orientation: horizontal) {
+    .panes(@orientation) when(@orientation = horizontal) {
+        .pane1  {
+            width: @dividePosition;
+            height: auto;
+        }
+        .pane2 {
+            left: @dividePosition;
+            top: 0;
+        }
+    }
+
+    .panes(@orientation) when(@orientation = vertical) {
+        .pane1  {
+            height: @dividePosition;
+            width: auto;
+        }
+        .pane2 {
+            top: @dividePosition;
+            left: 0;
+        }
+    }
+
+    .panes(@orientation);
+}

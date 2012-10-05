@@ -15,7 +15,7 @@ index.html:
         <script src="less.js" type="text/javascript"></script>
       </head>
       <body>
-        <div class="main-container">
+        <div class="layout main">
           <div class="layout top"></div> 
           <div class="layout left"></div> 
           <div class="layout center content">
@@ -33,13 +33,7 @@ Style.less:
 
     @import 'border-layout.less';
     
-    .main-container {
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        right: 0px;
-        bottom: 0px;
-    
+    .layout.main {
         min-width: 600px;
         min-height: 400px;
         

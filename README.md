@@ -53,3 +53,4 @@ Style.less:
 [Click here to open the advanced example](http://sunesimonsen.github.com/less-border-layout/advanced.html "Advanced example")
 
 ![Border layout](http://sunesimonsen.github.com/less-border-layout/images/border-layout-advanced-thumb.png)
+![Border layout](http://sunesimonsen.github.com/less-border-layout/images/border-layout-advanced-resized-thumb.png)

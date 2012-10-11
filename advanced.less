@@ -31,8 +31,42 @@
 }
 
 .item {
-    height: 50px;
+    position: relative;
+    .icons {
+        position: absolute;
+        top: 8px;
+        left: 6px;
+        bottom: 8px;
+        width: 14px;
+    }
+    .data {
+        padding: 8px;
+        padding-left: 28px;
+        .title, .description {
+            white-space: nowrap;
+            overflow-x: hidden;
+            text-overflow: ellipsis;
+        }
+    }
     border-bottom: @border-style;
+}
+
+.folders {
+    padding: 20px 0px;
+    border-bottom: @border-style;
+    .folder {
+        padding: 2px 0px;
+        i {
+            margin-left: 40px;
+        }
+        .title {
+            margin-left: 8px;
+        }
+        &:hover {
+            background-color: #E9EDE3;
+            cursor: pointer;
+        }
+    }
 }
 
 .border-layout-floating-top(@height) {
@@ -40,8 +74,8 @@
         z-index: 1;
         height: @height;
         bottom: auto;
-        .box-shadow(0px 2px 2px 0px rgba(182, 182, 182, 0.4));
-        right: 17px;
+        .box-shadow(0px 2px 2px 0px rgba(182, 182, 182, 0.2));
+        right: 16px;
     }
     > .layout.center{
         padding-top: @height;
@@ -49,14 +83,11 @@
 }
 
 .layout.main {
-    min-width: 600px;
-    min-height: 400px;
-    
     .border-layout-top(107px + 55px);
 
     > .top {
         > .banner {
-            background-color: rgba(36, 99, 0, 0.5);
+            background-color: #91b07f;
             height: 107px;
             position: relative;
             .border-layout-right(300px);
@@ -80,16 +111,18 @@
                 .split-layout(400px);
             }
             @media (max-width: 1000px) {
-                .split-layout(300px, vertical);
+                .split-layout(293px, vertical);
             }
             .pane1 {
                 .border-layout-floating-top(@toolbar-height);
-                .center {
-                    overflow-x: auto;
-                    overflow-y: scroll;
-                }
                 border-right: @border-style;
                 border-bottom: @border-style;
+                .center {
+                    overflow-y: scroll;
+                }
+            }
+            .pane2 {
+                padding: 10px 40px;
             }
         }
     }

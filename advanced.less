@@ -18,14 +18,14 @@
 @toolbar-padding-top-bottom: 0px;
 @toolbar-padding: @toolbar-padding-top-bottom @toolbar-padding-left-right;
 @toolbar-height: 55px;
-@toolbar-line-height: @toolbar-height - 2 * @toolbar-padding-top-bottom - 1;
+@toolbar-line-height: @toolbar-height - 2 * @toolbar-padding-top-bottom - 2;
 
 @toolbar-color: #F9F9F9;
 @border-color: #E9E9E9;
 @border-style: 1px solid @border-color;
 @panel-color: #F5F7F0;
 
-@search-width: 270px;
+@search-width: 250px;
 
 ::-webkit-scrollbar {
     width: 12px;
@@ -77,27 +77,34 @@
     } 
 }
 
-.item {
-    position: relative;
-    .icons {
-        position: absolute;
-        top: 8px;
-        left: 6px;
-        bottom: 8px;
-        width: 14px;
-    }
-    .data {
-        padding: 8px;
-        padding-left: 28px;
-        .title, .description {
-            white-space: nowrap;
-            overflow-x: hidden;
-            text-overflow: ellipsis;
+.list {
+    .toolbar {
+        .title {
+            font-weight: bold;
         }
     }
-    border-bottom: @border-style;
-    &.selected {
-        background-color: rgb(223, 243, 241);
+    .item {
+        position: relative;
+        .icons {
+            position: absolute;
+            top: 8px;
+            left: 6px;
+            bottom: 8px;
+            width: 14px;
+        }
+        .data {
+            padding: 8px;
+            padding-left: 28px;
+            .title, .description {
+                white-space: nowrap;
+                overflow-x: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+        border-bottom: @border-style;
+        &.selected {
+            background-color: rgb(223, 243, 241);
+        }
     }
 }
 
@@ -172,19 +179,26 @@ body {
         > .toolbar {
             position: relative;
             .border-layout-left(@sidebar-width);
-            .border-layout-right(@search-width);
+            .border-layout-right(@search-width + 2 * @toolbar-padding-left-right);
             .compose {
                 width: @sidebar-width - 2 * @toolbar-padding-left-right;
             }
 
             .right {
-                text-align: right;
+                text-align: left;
             }
             .search {
+                width: @search-width - (2 + 9 + 28);
+                padding-left: 9px;
+                padding-right: 28px;
+                margin-bottom: 0;
                 margin: 0;
+                .border-radius(15px);
             }
             .icon-search {
-                margin-left: -25px;
+                position: absolute;
+                top: 19px;
+                right: 26px;
             }
         }
     }

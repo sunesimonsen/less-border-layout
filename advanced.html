@@ -2,31 +2,55 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet/less" type="text/css" href="advanced.less">
     <script src="less.js" type="text/javascript"></script>
-    <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
   </head>
   <body>
     <div class="layout main">
       <div class="layout top">
         <div class="banner">
         </div>
-        <div class="toolbar">
+        <div class="toolbar layout">
+          <div class="layout left">
+            <button class="btn btn-success compose">Compose mail</button>
+          </div>
+          <div class="layout center">
+            <div class="btn-group">
+              <button class="btn dropdown-toggle" data-toggle="dropdown">Select <span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <li><a href="#">All</a></li>
+                <li><a href="#">None</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Unread</a></li>
+                <li><a href="#">Read</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Stared</a></li>
+              </ul>
+            </div>
+            <button class="btn"><i class="icon-trash"></i></button>
+          </div>
+          <div class="layout right">
+            <input type="search" class="search" placeholder="Search"/>
+            <i class="icon-search"></i>
+          </div>
         </div>
       </div>
       <div class="layout center">
-        <div class="layout left">
+        <div class="layout left sidebar">
           <div class="folders">
-            <div class="folder"><i class="icon-inbox"></i><span class="title">Inbox</span></div>
-            <div class="folder"><i class="icon-star"></i><span class="title">Stared</span></div>
-            <div class="folder"><i class="icon-edit"></i><span class="title">Drafts</span></div>
-            <div class="folder"><i class="icon-plane"></i><span class="title">Sent</span></div>
-            <div class="folder"><i class="icon-trash"></i><span class="title">Trash</span></div>
+            <div class="folder" title="Inbox"><i class="icon-inbox"></i><span class="title">Inbox</span></div>
+            <div class="folder" title="Stared"><i class="icon-star"></i><span class="title">Stared</span></div>
+            <div class="folder" title="Drafts"><i class="icon-edit"></i><span class="title">Drafts</span></div>
+            <div class="folder" title="Sent"><i class="icon-plane"></i><span class="title">Sent</span></div>
+            <div class="folder" title="Trash"><i class="icon-trash"></i><span class="title">Trash</span></div>
           </div>
         </div>
         <div class="layout center">
           <div class="layout pane1">
-            <div class="layout top toolbar"></div>
+            <div class="layout top toolbar">
+              <span class="title">Inbox</span>
+            </div>
             <div class="layout center list">
               <div class="item">
                 <div class="icons">
@@ -64,7 +88,7 @@
                   <div class="description">Item description - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum erat eli</div>
                 </div>
               </div>
-              <div class="item">
+              <div class="item selected">
                 <div class="icons">
                   <i class="icon-star-empty"></i>
                   <i class="icon-file"></i>
@@ -83,7 +107,7 @@
                   <div class="description">Item description - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum erat eli</div>
                 </div>
               </div>
-              <div class="item">
+              <div class="item selected">
                 <div class="icons">
                   <i class="icon-star"></i>
                 </div>
@@ -221,84 +245,92 @@
             </div>
           </div>
           <div class="layout pane2">
-            <h1>What is Lorem Ipsum?</h1>
-            <p>
-              Lorem Ipsum is simply dummy text of the printing and
-              typesetting industry. Lorem Ipsum has been the
-              industry's standard dummy text ever since the 1500s,
-              when an unknown printer took a galley of type and
-              scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially
-              unchanged. It was popularised in the 1960s with the
-              release of Letraset sheets containing Lorem Ipsum
-              passages, and more recently with desktop publishing
-              software like Aldus PageMaker including versions of
-              Lorem Ipsum.
-            </p>
-            <h1>Where does it come from?</h1>
-            <p>
-              Contrary to popular belief, Lorem Ipsum is not simply
-              random text. It has roots in a piece of classical Latin
-              literature from 45 BC, making it over 2000 years
-              old. Richard McClintock, a Latin professor at
-              Hampden-Sydney College in Virginia, looked up one of the
-              more obscure Latin words, consectetur, from a Lorem
-              Ipsum passage, and going through the cites of the word
-              in classical literature, discovered the undoubtable
-              source. Lorem Ipsum comes from sections 1.10.32 and
-              1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes
-              of Good and Evil) by Cicero, written in 45 BC. This book
-              is a treatise on the theory of ethics, very popular
-              during the Renaissance. The first line of Lorem Ipsum,
-              "Lorem ipsum dolor sit amet..", comes from a line in
-              section 1.10.32.
-            </p>
-            <p>
-              The standard chunk of Lorem Ipsum used since the 1500s
-              is reproduced below for those interested. Sections
-              1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum"
-              by Cicero are also reproduced in their exact original
-              form, accompanied by English versions from the 1914
-              translation by H. Rackham.
-            </p>
-            <h1>Why do we use if?</h1>
-            <p>
-              It is a long established fact that a reader will be
-              distracted by the readable content of a page when
-              looking at its layout. The point of using Lorem Ipsum is
-              that it has a more-or-less normal distribution of
-              letters, as opposed to using 'Content here, content
-              here', making it look like readable English. Many
-              desktop publishing packages and web page editors now use
-              Lorem Ipsum as their default model text, and a search
-              for 'lorem ipsum' will uncover many web sites still in
-              their infancy. Various versions have evolved over the
-              years, sometimes by accident, sometimes on purpose
-              (injected humour and the like).
-            </p>
-            <h1>Where can I get some?</h1>
-            <p>
-              There are many variations of passages of Lorem Ipsum
-              available, but the majority have suffered alteration in
-              some form, by injected humour, or randomised words which
-              don't look even slightly believable. If you are going to
-              use a passage of Lorem Ipsum, you need to be sure there
-              isn't anything embarrassing hidden in the middle of
-              text. All the Lorem Ipsum generators on the Internet
-              tend to repeat predefined chunks as necessary, making
-              this the first true generator on the Internet. It uses a
-              dictionary of over 200 Latin words, combined with a
-              handful of model sentence structures, to generate Lorem
-              Ipsum which looks reasonable. The generated Lorem Ipsum
-              is therefore always free from repetition, injected
-              humour, or non-characteristic words etc.
-            </p>
+            <div class="layout top toolbar mail-toolbar">
+              <button class="btn"><i class="icon-share-alt"></i> Reply</button>
+              <button class="btn"><i class="icon-reply-all"></i> Reply all</button>
+              <button class="btn"><i class="icon-arrow-right"></i> Forward</button>
+              <button class="btn"><i class="icon-trash"></i> Delete</button>
+            </div>
+            <div class="layout center">
+              <h1>What is Lorem Ipsum?</h1>
+              <p>
+                Lorem Ipsum is simply dummy text of the printing and
+                typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s,
+                when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. It has
+                survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentially
+                unchanged. It was popularised in the 1960s with the
+                release of Letraset sheets containing Lorem Ipsum
+                passages, and more recently with desktop publishing
+                software like Aldus PageMaker including versions of
+                Lorem Ipsum.
+              </p>
+              <h1>Where does it come from?</h1>
+              <p>
+                Contrary to popular belief, Lorem Ipsum is not simply
+                random text. It has roots in a piece of classical Latin
+                literature from 45 BC, making it over 2000 years
+                old. Richard McClintock, a Latin professor at
+                Hampden-Sydney College in Virginia, looked up one of the
+                more obscure Latin words, consectetur, from a Lorem
+                Ipsum passage, and going through the cites of the word
+                in classical literature, discovered the undoubtable
+                source. Lorem Ipsum comes from sections 1.10.32 and
+                1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes
+                of Good and Evil) by Cicero, written in 45 BC. This book
+                is a treatise on the theory of ethics, very popular
+                during the Renaissance. The first line of Lorem Ipsum,
+                "Lorem ipsum dolor sit amet..", comes from a line in
+                section 1.10.32.
+              </p>
+              <p>
+                The standard chunk of Lorem Ipsum used since the 1500s
+                is reproduced below for those interested. Sections
+                1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum"
+                by Cicero are also reproduced in their exact original
+                form, accompanied by English versions from the 1914
+                translation by H. Rackham.
+              </p>
+              <h1>Why do we use if?</h1>
+              <p>
+                It is a long established fact that a reader will be
+                distracted by the readable content of a page when
+                looking at its layout. The point of using Lorem Ipsum is
+                that it has a more-or-less normal distribution of
+                letters, as opposed to using 'Content here, content
+                here', making it look like readable English. Many
+                desktop publishing packages and web page editors now use
+                Lorem Ipsum as their default model text, and a search
+                for 'lorem ipsum' will uncover many web sites still in
+                their infancy. Various versions have evolved over the
+                years, sometimes by accident, sometimes on purpose
+                (injected humour and the like).
+              </p>
+              <h1>Where can I get some?</h1>
+              <p>
+                There are many variations of passages of Lorem Ipsum
+                available, but the majority have suffered alteration in
+                some form, by injected humour, or randomised words which
+                don't look even slightly believable. If you are going to
+                use a passage of Lorem Ipsum, you need to be sure there
+                isn't anything embarrassing hidden in the middle of
+                text. All the Lorem Ipsum generators on the Internet
+                tend to repeat predefined chunks as necessary, making
+                this the first true generator on the Internet. It uses a
+                dictionary of over 200 Latin words, combined with a
+                handful of model sentence structures, to generate Lorem
+                Ipsum which looks reasonable. The generated Lorem Ipsum
+                is therefore always free from repetition, injected
+                humour, or non-characteristic words etc.
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script src="./bootstrap/js/bootstrap.min.js"></script>
+    <script src="./vendor/jquery-1.8.1.js"></script>
+    <script src="./vendor/bootstrap/js/bootstrap.min.js"></script>
   </body>
 </html>

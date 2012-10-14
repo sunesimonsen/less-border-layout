@@ -39,7 +39,7 @@
       <div class="layout center">
         <div class="layout left sidebar">
           <div class="folders">
-            <div class="folder" title="Inbox"><i class="icon-inbox"></i><span class="title">Inbox</span></div>
+            <div class="folder selected" title="Inbox"><i class="icon-inbox"></i><span class="title">Inbox</span></div>
             <div class="folder" title="Stared"><i class="icon-star"></i><span class="title">Stared</span></div>
             <div class="folder" title="Drafts"><i class="icon-edit"></i><span class="title">Drafts</span></div>
             <div class="folder" title="Sent"><i class="icon-plane"></i><span class="title">Sent</span></div>
@@ -49,7 +49,14 @@
         <div class="layout center">
           <div class="layout pane1">
             <div class="layout top toolbar">
-              <span class="title">Inbox</span>
+              <div class="layout center">
+                <span class="title">Inbox</span>
+              </div>
+              <div class="layout right paging">
+                <span class="page-indicator">1-12 of 12</span>
+                <a class="prev"><i class="icon-white icon-chevron-left"></i></a>
+                <a class="next"><i class="icon-white icon-chevron-right"></i></a>
+              </div>
             </div>
             <div class="layout center list">
               <div class="item">
@@ -245,7 +252,7 @@
             </div>
           </div>
           <div class="layout pane2">
-            <div class="layout top toolbar mail-toolbar">
+            <div class="layout top toolbar">
               <button class="btn"><i class="icon-share-alt"></i> Reply</button>
               <button class="btn"><i class="icon-reply-all"></i> Reply all</button>
               <button class="btn"><i class="icon-arrow-right"></i> Forward</button>

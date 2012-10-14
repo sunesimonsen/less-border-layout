@@ -16,12 +16,13 @@
 
 @toolbar-padding-left-right: 16px;
 @toolbar-padding-top-bottom: 0px;
-@toolbar-height: 55px;
 @toolbar-padding: @toolbar-padding-top-bottom @toolbar-padding-left-right;
+@toolbar-height: 55px;
 @toolbar-line-height: @toolbar-height - 2 * @toolbar-padding-top-bottom - 1;
 
 @toolbar-color: #F9F9F9;
-@border-style: 1px solid #E9E9E9;
+@border-color: #E9E9E9;
+@border-style: 1px solid @border-color;
 @panel-color: #F5F7F0;
 
 @search-width: 270px;
@@ -71,6 +72,7 @@
 
 .pane1, .pane2 {
     .toolbar {
+        border-color: lighten(@toolbar-color, 0.9%);
         background-color: lighten(@toolbar-color, 0.9%);
     } 
 }
@@ -116,7 +118,36 @@
                 background-color: #E9EDE3;
                 cursor: pointer;
             }
+            &.selected {
+                background-color: #E9EDE3;
+            }
         }
+    }
+}
+
+.paging {
+    text-align: right;
+    .page-indicator {
+        margin-right: 6px;
+    }
+    a.prev, a.next {
+        margin: 0;
+        background-color: lighten(gray, 10%);
+        padding: 2px 3px;
+        .box-shadow(inset 0px 1px 1px 0px darken(gray, 10%));
+
+        &:hover {
+            background-color: lighten(gray, 20%);
+        }
+    }
+    @border-radius: 14px;
+    a.prev {
+        padding-left: 5px;
+        .border-radius(@border-radius 0px 0px @border-radius);
+    }
+    a.next {
+        padding-right: 5px;
+        .border-radius(0px @border-radius @border-radius 0px);
     }
 }
 
@@ -188,25 +219,29 @@ body {
             @media (max-width: 1000px) {
                 .split-layout(250px, vertical);
             }
-            .pane1 {
+
+            > .pane1 {
                 .border-layout-top(@toolbar-height);
+                @media (max-width: 1000px) {
+                    .border-layout-top(@toolbar-height);
+                }
                 border-bottom: @border-style;
-                .top {
+                > .top {
+                    .border-layout-right(200px);
                     .box-shadow(0px 2px 2px 0px rgba(182, 182, 182, 0.2));
                 }
-                .center {
+                > .center {
                     border-right: @border-style;
                     overflow-y: scroll;
                 }
             }
-            .pane2 {
+            > .pane2 {
                 .border-layout-top(@toolbar-height);
-                .top.toolbar {
+                > .top.toolbar {
                     .box-shadow(0px 2px 2px 0px rgba(182, 182, 182, 0.2));
                     text-align: right;
-                    border-button: @border-style;
                 }
-                .center {
+                > .center {
                     padding: 10px 40px;
                     overflow-y: scroll;
                 }

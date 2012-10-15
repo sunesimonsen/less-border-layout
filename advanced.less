@@ -162,7 +162,9 @@
 
 
 .layout.main {
-    min-width: 660px;
+    min-width: 610px;
+    overflow-x: hidden;
+    overflow-y: hidden;
     .border-layout-top(@banner-height + @toolbar-height);
 
     > .top {
@@ -178,17 +180,20 @@
         }
         > .toolbar {
             position: relative;
-            .border-layout-left(@sidebar-width);
-            .border-layout-right(@search-width + 2 * @toolbar-padding-left-right);
+
+            @compose-width: @sidebar-width;
+            .border-layout-left(@compose-width);
             .compose {
-                width: @sidebar-width - 2 * @toolbar-padding-left-right;
+                width: @compose-width - 2 * @toolbar-padding-left-right;
             }
+
+            .border-layout-right(@search-width);
 
             .right {
                 text-align: left;
             }
             .search {
-                width: @search-width - (2 + 9 + 28);
+                width: @search-width - (2 + 9 + 28 + 2 * @toolbar-padding-left-right);
                 padding-left: 9px;
                 padding-right: 28px;
                 margin-bottom: 0;
@@ -201,10 +206,16 @@
                 right: 26px;
             }
             @media (max-width: 1000px) {
-                @search-width: 150px;
-                .border-layout-right(@search-width + 2 * @toolbar-padding-left-right);
+                @compose-width: 160px;
+                .border-layout-left(@compose-width);
+                .compose {
+                    width: @compose-width - 2 * @toolbar-padding-left-right;
+                }
+
+                @search-width: 170px;
+                .border-layout-right(@search-width);
                 .search {
-                    width: @search-width - (2 + 9 + 28);
+                    width: @search-width - (2 + 9 + 28 + 2 * @toolbar-padding-left-right);
                 }
             }
         }
@@ -256,7 +267,7 @@
                                 display: inline-block;
                             }
                         }
-                        .border-layout-left(150px);
+                        .border-layout-left(100px);
                     }
                 }
 

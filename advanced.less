@@ -42,6 +42,16 @@
     }
 }
 
+.user-select-none() {
+    -webkit-touch-callout:none;
+    -webkit-user-select:none;
+    -khtml-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+
 .border-radius(@radius) {
     -webkit-border-radius: @radius;
     -moz-border-radius: @radius;
@@ -222,6 +232,7 @@
             overflow-y: hidden;
             .split-layout(40%);
             > .pane1 {
+                .user-select-none();
                 .border-layout-top(@toolbar-height);
                 border-bottom: @border-style;
                 > .top {
@@ -248,6 +259,12 @@
                 }
             }
         }
+    }
+
+    .paging,
+    .folder,
+    .btn {
+        .user-select-none();
     }
 
     @media (max-width: 1200px) {

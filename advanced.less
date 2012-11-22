@@ -308,7 +308,7 @@
                                 display: inline-block;
                             }
                         }
-                        .border-layout-left(100px);
+                        .border-layout-left(80px);
                     }
                 }
             }
@@ -334,6 +334,13 @@
                 }
             }
         }
+        > .center {
+            > .center {
+                .toolbar .button-label {
+                    display: none;
+                }
+            }
+        }
     }
 
     @media (max-height: 768px) {
@@ -344,7 +351,7 @@
             }
         }
     }
-    @media (max-height: 490px) {
+    @media (max-height: 560px) {
         .border-layout-top(0 + @toolbar-height);
         > .top {
             > .banner {

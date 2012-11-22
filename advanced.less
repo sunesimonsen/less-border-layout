@@ -13,6 +13,7 @@
 
 @sidebar-width: 209px; 
 @collapsed-sidebar-width: 50px; 
+@small-banner-height: 55px;
 @banner-height: 107px;
 
 @toolbar-padding-left-right: 16px;
@@ -162,9 +163,10 @@
 
 
 .layout.main {
-    min-width: 610px;
+    min-width: 360px;
     overflow-x: hidden;
     overflow-y: hidden;
+
     .border-layout-top(@banner-height + @toolbar-height);
 
     > .top {
@@ -178,7 +180,7 @@
             .border-layout-right(290px);
 
         }
-        > .toolbar {
+        > .toolbar.large {
             position: relative;
 
             @compose-width: @sidebar-width;
@@ -205,79 +207,22 @@
                 top: 19px;
                 right: 26px;
             }
-            @media (max-width: 1000px) {
-                @compose-width: 160px;
-                .border-layout-left(@compose-width);
-                .compose {
-                    width: @compose-width - 2 * @toolbar-padding-left-right;
-                }
-
-                @search-width: 170px;
-                .border-layout-right(@search-width);
-                .search {
-                    width: @search-width - (2 + 9 + 28 + 2 * @toolbar-padding-left-right);
-                }
-            }
+        }
+        > .toolbar.small {
+            display: none;
         }
     }
 
     > .center {
         .border-layout-left(@sidebar-width);
-        @media (max-width: 1200px) {
-            .border-layout-left(@collapsed-sidebar-width);
-            > .left {
-                .folders {
-                    .folder {
-                        i {
-                            margin-left: 10px;
-                            zoom: 1.5;
-                        }
-                        .title {
-                            display: none;
-                        }
-                    }
-                }
-            }
-        }
         > .left {
             background-color: @panel-color;
         }
         > .center {
             overflow-y: hidden;
             .split-layout(40%);
-            @media (max-width: 1200px) {
-                .split-layout(400px);
-            }
-            @media (max-width: 1000px) {
-                .hide-all();
-                > .mailList {
-                    .maximize();
-                }
-                &.showMailView {
-                    .hide-all();
-                    > .mailView {
-                        .maximize();
-                    }
-                }
-                > .mailView {
-                    > .top {
-                        > .left {
-                            text-align: left;
-                            .back-to-inbox {
-                                display: inline-block;
-                            }
-                        }
-                        .border-layout-left(100px);
-                    }
-                }
-
-            }
-
             > .pane1 {
                 .border-layout-top(@toolbar-height);
-                @media (max-width: 1000px) {
-                    .border-layout-top(@toolbar-height);
-                }
                 border-bottom: @border-style;
                 > .top {
                     .border-layout-right(200px);
@@ -301,6 +246,109 @@
                     padding: 10px 40px;
                     overflow-y: scroll;
                 }
+            }
+        }
+    }
+
+    @media (max-width: 1200px) {
+        > .center {
+            > .center {
+                .split-layout(400px);
+            }
+            .border-layout-left(@collapsed-sidebar-width);
+            > .left {
+                .folders {
+                    .folder {
+                        i {
+                            margin-left: 10px;
+                            zoom: 1.5;
+                        }
+                        .title {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1000px) {
+        > .top {
+            > .toolbar.large {
+                @compose-width: 160px;
+                .border-layout-left(@compose-width);
+                .compose {
+                    width: @compose-width - 2 * @toolbar-padding-left-right;
+                }
+
+                @search-width: 170px;
+                .border-layout-right(@search-width);
+                .search {
+                    width: @search-width - (2 + 9 + 28 + 2 * @toolbar-padding-left-right);
+                }
+            }
+        }
+        > .center {
+            > .center {
+                .hide-all();
+                > .mailList {
+                    .maximize();
+                }
+                &.showMailView {
+                    .hide-all();
+                    > .mailView {
+                        .maximize();
+                    }
+                }
+                > .mailView {
+                    > .top {
+                        > .left {
+                            text-align: left;
+                            .back-to-inbox {
+                                display: inline-block;
+                            }
+                        }
+                        .border-layout-left(100px);
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 650px) {
+        > .top {
+            > .toolbar.large {
+                display: none;
+            }
+            > .toolbar.small {
+                display: block;
+                position: relative;
+                .border-layout-right(80px);
+
+                .right {
+                    text-align: right;
+                }
+
+                .compose {
+                    margin-right: 15px;
+                }
+            }
+        }
+    }
+
+    @media (max-height: 768px) {
+        .border-layout-top(@small-banner-height + @toolbar-height);
+        > .top {
+            > .banner {
+                height: @small-banner-height;
+            }
+        }
+    }
+    @media (max-height: 490px) {
+        .border-layout-top(0 + @toolbar-height);
+        > .top {
+            > .banner {
+                display: none;
             }
         }
     }

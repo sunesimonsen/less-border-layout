@@ -58,6 +58,13 @@
     border-radius: @radius;
 }
 
+.transition(@duration:0.2s, @ease:ease-out) {
+  -webkit-transition: all @duration @ease;
+  -moz-transition: all @duration @ease;
+  -o-transition: all @duration @ease;
+  transition: all @duration @ease;
+}
+
 .icon-reply-all {
   background-image: url("images/reply-all.png");
   background-position: 0 0;
@@ -229,6 +236,7 @@
             background-color: @panel-color;
         }
         > .center {
+            overflow-x: hidden;
             overflow-y: hidden;
             .split-layout(40%);
             > .pane1 {
@@ -307,14 +315,23 @@
         }
         > .center {
             > .center {
-                .hide-all();
+                > .mailList,
+                > .mailView {
+                    .transition();
+                }
+
                 > .mailList {
-                    .maximize();
+                    .focusView();
+                }
+                > .mailView {
+                    .moveViewRight();
                 }
                 &.showMailView {
-                    .hide-all();
+                    > .mailList {
+                        .moveViewLeft();
+                    }
                     > .mailView {
-                        .maximize();
+                        .focusView();
                     }
                 }
                 > .mailView {

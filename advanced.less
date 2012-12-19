@@ -65,6 +65,11 @@
   transition: all @duration @ease;
 }
 
+.transitioning {
+    .transition();
+}
+
+
 .icon-reply-all {
   background-image: url("images/reply-all.png");
   background-position: 0 0;
@@ -315,11 +320,6 @@
         }
         > .center {
             > .center {
-                > .mailList,
-                > .mailView {
-                    .transition();
-                }
-
                 > .mailList {
                     .focusView();
                 }

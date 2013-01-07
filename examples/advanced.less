@@ -1,6 +1,6 @@
-@import "layouts.less";
-@import "border-layout.less";
-@import "split-layout.less";
+@import "../layouts.less";
+@import "../border-layout.less";
+@import "../split-layout.less";
 
 // Drop shadows
 .box-shadow(@shadowA, @shadowB:X, ...){
@@ -28,6 +28,53 @@
 @panel-color: #F5F7F0;
 
 @search-width: 250px;
+
+.hide-all() {
+    > .layout {
+        display: none;
+    }
+}
+
+.maximize() {
+    & {
+        display: block;
+        width: auto;
+        height: auto;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+.focusView() {
+    & {
+        width: auto;
+        height: auto;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+.moveViewLeft() {
+    & {
+        top: 0;
+        left: -100%;
+        right: 100%;
+        bottom: 0;
+    }
+}
+
+.moveViewRight() {
+    & {
+        top: 0;
+        left: 100%;
+        right: -100%;
+        bottom: 0;
+    }
+}
 
 ::-webkit-scrollbar {
     width: 12px;

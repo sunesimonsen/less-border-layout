@@ -2,7 +2,7 @@
 
 This example shows how to do border layouts using Less mixins.
 
-![Border layout](https://raw.github.com/sunesimonsen/less-border-layout/gh-pages/examples/images/images/border-layout.png)
+![Border layout](https://raw.github.com/sunesimonsen/less-border-layout/master/examples/images/border-layout.png)
 
 You can see the example [here](http://sunesimonsen.github.com/examples/less-border-layout/).
 

@@ -2,9 +2,9 @@
 
 This example shows how to do border layouts using Less mixins.
 
-![Border layout](http://sunesimonsen.github.com/less-border-layout/images/border-layout.png)
+![Border layout](http://sunesimonsen.github.com/less-border-layout/examples/images/border-layout.png)
 
-You can see the example [here](http://sunesimonsen.github.com/less-border-layout/).
+You can see the example [here](http://sunesimonsen.github.com/examples/less-border-layout/).
 
 index.html:
 
@@ -31,7 +31,8 @@ index.html:
   
 Style.less:
 
-    @import 'border-layout.less';
+    @import "../layouts.less";
+    @import "../border-layout.less";
     
     .layout.main {
         min-width: 600px;
@@ -50,7 +51,6 @@ Style.less:
     
 ## Advanved example
 
-[Click here to open the advanced example](http://sunesimonsen.github.com/less-border-layout/advanced.html "Advanced example")
+[Click here to open the advanced example](http://sunesimonsen.github.com/less-border-layout/examples/advanced.html "Advanced example")
 
-![Border layout](http://sunesimonsen.github.com/less-border-layout/images/border-layout-advanced-thumb.png)
-![Border layout](http://sunesimonsen.github.com/less-border-layout/images/border-layout-advanced-resized-thumb.png)
+![Border layout](http://sunesimonsen.github.com/less-border-layout/examples/images/border-layout-advanced-thumb.png)

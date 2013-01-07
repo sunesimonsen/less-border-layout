@@ -1,0 +1,46 @@
+@import "layouts.less";
+
+.border-layout-top(@height) {
+    > .layout.top {
+        height: @height;
+        bottom: auto;
+    }
+    > .layout.left,
+    > .layout.center,
+    > .layout.right {
+        top: @height;
+    }
+}
+
+.border-layout-left(@width) {
+    > .layout.left {
+        width: @width;
+        right: auto;
+    }
+    > .layout.center {
+        left: @width;
+    }
+}
+
+.border-layout-right(@width) {
+    > .layout.right {
+        width: @width;
+        left: auto;
+    }
+    > .layout.center {
+        right: @width;
+    }
+}
+
+.border-layout-bottom(@height) {
+    > .layout.bottom {
+        height: @height;
+        top: auto;
+    }
+    > .layout.left,
+    > .layout.center,
+    > .layout.right {
+        bottom: @height;
+    }
+}
+

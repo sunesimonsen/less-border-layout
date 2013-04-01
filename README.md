@@ -49,7 +49,7 @@ Style.less:
         }
     }
     
-## Advanved example
+## Advanced example
 
 [Click here to open the advanced example](http://sunesimonsen.github.com/less-border-layout/examples/advanced.html "Advanced example")
 

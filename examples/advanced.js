@@ -1,10 +1,6 @@
 /*global document, $*/
 $(function () {
     document.addEventListener("touchstart", function (e) {
-        return true;
-    }, true);
-
-    document.addEventListener("touchmove", function (e) {
         var $target = $(e.target);
         var $scrollable = $target.closest('.scrollable');
 
@@ -16,7 +12,16 @@ $(function () {
             } else if (scrollable.scrollHeight <= scrollable.scrollTop + scrollable.offsetHeight) {
                 scrollable.scrollTop = scrollable.scrollHeight - scrollable.offsetHeight - 1;
             }
+        }
+        return true;
+    }, true);
 
+    document.addEventListener("touchmove", function (e) {
+        var $target = $(e.target);
+        var $scrollable = $target.closest('.scrollable');
+
+        var insideScrollable = $scrollable.length > 0;
+        if (insideScrollable) {
             e.stopPropagation();
         } else {
             e.preventDefault();

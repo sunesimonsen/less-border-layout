@@ -34,10 +34,11 @@ $(function () {
         $target.contents().find('body').css('overflow', 'hidden');
 
         setTimeout(function () {
+            //-webkit-transform: translate3d(0,0,0);
             var height = $target.contents().find('html').height();
             $target.height(height);
+            $target.show();
         }, 1);
-        $target.show();
     });
     function enableTransition() {
         var views = $('.mailView, .mailList');

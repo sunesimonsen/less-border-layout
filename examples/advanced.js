@@ -1,9 +1,6 @@
 /*global document, $*/
 $(function () {
-    document.addEventListener("touchstart", function (e) {
-        var $target = $(e.target);
-        var $scrollable = $target.closest('.scrollable');
-
+    var adjustScrollable = function ($scrollable) {
         var insideScrollable = $scrollable.length > 0;
         if (insideScrollable) {
             var scrollable = $scrollable[0];
@@ -13,10 +10,16 @@ $(function () {
                 scrollable.scrollTop = scrollable.scrollHeight - scrollable.offsetHeight - 1;
             }
         }
-        return true;
-    }, true);
+    };
+    var touchStart = function (e) {
+        var $target = $(e.target);
+        var $scrollable = $target.closest('.scrollable');
 
-    document.addEventListener("touchmove", function (e) {
+        adjustScrollable($scrollable);
+        return true;
+    };
+
+    var touchMove = function (e) {
         var $target = $(e.target);
         var $scrollable = $target.closest('.scrollable');
 
@@ -27,11 +30,18 @@ $(function () {
             e.preventDefault();
         }
         return insideScrollable;
+    };
 
-    }, true);
+    document.addEventListener("touchstart", touchStart, true);
+    document.addEventListener("touchmove", touchMove, true);
+
     $('.mail-frame').on('load', function (e) {
         var $target = $(e.target);
         $target.contents().find('body').css('overflow', 'hidden');
+        $target.contents().on('touchstart', function (e) {
+            var $scrollable = $target.closest('.scrollable');
+            adjustScrollable($scrollable);
+        });
         $target.show();
 
         setTimeout(function () {

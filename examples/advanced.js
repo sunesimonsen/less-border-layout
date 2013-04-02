@@ -1,5 +1,5 @@
 $(function () {
-    document.addEventListener("touchstart", function(){}, true);
+    document.addEventListener("touchstart", function(){ return false; }, true);
 
     function enableTransition() {
         var views = $('.mailView, .mailList');

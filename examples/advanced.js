@@ -14,7 +14,7 @@ $(function () {
             if (scrollable.scrollTop === 0) {
                 scrollable.scrollTop = 1;
             } else if (scrollable.scrollHeight === scrollable.scrollTop + scrollable.offsetHeight) {
-                scrollable.scrollTop = scrollable.scrollHeight - 1;
+                scrollable.scrollTop = scrollable.scrollTop - 1;
             }
 
             e.stopPropagation();

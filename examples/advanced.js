@@ -32,12 +32,12 @@ $(function () {
     $('.mail-frame').on('load', function (e) {
         var $target = $(e.target);
         $target.contents().find('body').css('overflow', 'hidden');
+        $target.show();
 
         setTimeout(function () {
-            //-webkit-transform: translate3d(0,0,0);
             var height = $target.contents().find('html').height();
             $target.height(height);
-            $target.show();
+            $target.contents().find('body').css('-webkit-transform', 'translate3d(0,0,0)');
         }, 1);
     });
     function enableTransition() {

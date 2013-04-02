@@ -29,7 +29,16 @@ $(function () {
         return insideScrollable;
 
     }, true);
+    $('.mail-frame').on('load', function (e) {
+        var $target = $(e.target);
+        $target.contents().find('body').css('overflow', 'hidden');
 
+        setTimeout(function () {
+            var height = $target.contents().find('html').height();
+            $target.height(height);
+        }, 1);
+        $target.show();
+    });
     function enableTransition() {
         var views = $('.mailView, .mailList');
         views.addClass('transitioning');

@@ -7,10 +7,13 @@ $(function () {
     document.addEventListener("touchmove", function (e) {
         var $target = $(e.target);
         var insideScrollable = $target.closest('.scrollable').length > 0;
-        if (!insideScrollable) {
+        if (insideScrollable) {
+            e.stopPropagation();
+        } else {
             e.preventDefault();
         }
         return insideScrollable;
+
     }, true);
 
     function enableTransition() {

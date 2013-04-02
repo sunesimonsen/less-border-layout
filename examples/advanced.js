@@ -1,5 +1,13 @@
 $(function () {
-    document.addEventListener("touchstart", function(e){ e.preventDefault(); return false; }, true);
+    document.addEventListener("touchstart", function(e) { 
+        e.preventDefault(); 
+        return false; 
+    }, true);
+    
+    document.addEventListener("touchmove", function(e){ 
+        e.preventDefault(); 
+        return false; 
+    }, true);
 
     function enableTransition() {
         var views = $('.mailView, .mailList');

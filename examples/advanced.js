@@ -1,12 +1,16 @@
+/*global document, $*/
 $(function () {
-    document.addEventListener("touchstart", function(e) { 
-        e.preventDefault(); 
-        return false; 
+    document.addEventListener("touchstart", function (e) {
+        return true;
     }, true);
-    
-    document.addEventListener("touchmove", function(e){ 
-        e.preventDefault(); 
-        return false; 
+
+    document.addEventListener("touchmove", function (e) {
+        var $target = $(e.target);
+        var insideScrollable = $target.closest('.scrollable').length > 0;
+        if (!insideScrollable) {
+            e.preventDefault();
+        }
+        return insideScrollable;
     }, true);
 
     function enableTransition() {

@@ -11,10 +11,10 @@ $(function () {
         var insideScrollable = $scrollable.length > 0;
         if (insideScrollable) {
             var scrollable = $scrollable[0];
-            if (scrollable.scrollTop === 0) {
+            if (scrollable.scrollTop <= 0) {
                 scrollable.scrollTop = 1;
-            } else if (scrollable.scrollHeight === scrollable.scrollTop + scrollable.offsetHeight) {
-                scrollable.scrollTop = scrollable.scrollTop - 1;
+            } else if (scrollable.scrollHeight <= scrollable.scrollTop + scrollable.offsetHeight) {
+                scrollable.scrollTop = scrollable.scrollHeight - scrollable.offsetHeight - 1;
             }
 
             e.stopPropagation();

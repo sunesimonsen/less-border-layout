@@ -6,8 +6,17 @@ $(function () {
 
     document.addEventListener("touchmove", function (e) {
         var $target = $(e.target);
-        var insideScrollable = $target.closest('.scrollable').length > 0;
+        var $scrollable = $target.closest('.scrollable');
+
+        var insideScrollable = $scrollable.length > 0;
         if (insideScrollable) {
+            var scrollable = $scrollable[0];
+            if (scrollable.scrollTop === 0) {
+                scrollable.scrollTop = 1;
+            } else if (scrollable.scrollHeight === scrollable.scrollTop + scrollable.offsetHeight) {
+                scrollable.scrollTop = scrollable.scrollHeight - 1;
+            }
+
             e.stopPropagation();
         } else {
             e.preventDefault();

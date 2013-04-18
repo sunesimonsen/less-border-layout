@@ -8,6 +8,7 @@ You can see the example [here](http://sunesimonsen.github.com/examples/less-bord
 
 index.html:
 
+``` html
     <!DOCTYPE html>
     <html>
       <head>
@@ -28,7 +29,8 @@ index.html:
         </div>
       </body>
     </html>
-  
+```
+
 Style.less:
 
     @import "../layouts.less";
@@ -48,9 +50,11 @@ Style.less:
             .border-layout-right(60px);
         }
     }
-    
+
 ## Advanced example
 
 [Click here to open the advanced example](http://sunesimonsen.github.com/less-border-layout/examples/advanced.html "Advanced example")
 
-![Border layout](https://raw.github.com/sunesimonsen/less-border-layout/gh-pages/examples/images/border-layout-advanced-thumb.png)
+<a href="http://sunesimonsen.github.com/less-border-layout/examples/advanced.html">
+<img src="https://raw.github.com/sunesimonsen/less-border-layout/gh-pages/examples/images/border-layout-advanced-thumb.png" alt="Border layout example">
+</a>

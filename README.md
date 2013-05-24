@@ -2,7 +2,9 @@
 
 LessCSS mixins for doing border layouts in web-pages.
 
-Install npm install less-border-layout
+Install:
+
+    npm install less-border-layout
 
 ## Less border layout example
 

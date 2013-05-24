@@ -1,6 +1,6 @@
 {
   "name": "less-border-layout",
-  "description": "LessCSS mixins for doing border layouts in web pages",
+  "description": "LessCSS mixins for doing border layouts in web-pages",
   "version": "0.1.1",
   "repository": {
     "type": "git",

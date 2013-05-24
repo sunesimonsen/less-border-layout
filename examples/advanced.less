@@ -1,6 +1,6 @@
-@import "../layouts.less";
-@import "../border-layout.less";
-@import "../split-layout.less";
+@import "../lib/layouts.less";
+@import "../lib/border-layout.less";
+@import "split-layout.less";
 
 // Drop shadows
 .box-shadow(@shadowA, @shadowB:X, ...){
@@ -11,8 +11,8 @@
           box-shadow: @props;
 }
 
-@sidebar-width: 209px; 
-@collapsed-sidebar-width: 50px; 
+@sidebar-width: 209px;
+@collapsed-sidebar-width: 50px;
 @small-banner-height: 55px;
 @banner-height: 107px;
 

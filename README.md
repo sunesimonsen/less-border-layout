@@ -1,10 +1,16 @@
+# Less border layout
+
+LessCSS mixins for doing border layouts in web-pages.
+
+Install npm install less-border-layout
+
 ## Less border layout example
 
 This example shows how to do border layouts using Less mixins.
 
 ![Border layout](https://raw.github.com/sunesimonsen/less-border-layout/master/examples/images/border-layout.png)
 
-You can see the example [here](http://sunesimonsen.github.com/examples/less-border-layout/).
+You can see the example [here](http://sunesimonsen.github.io/less-border-layout/examples/).
 
 index.html:
 
